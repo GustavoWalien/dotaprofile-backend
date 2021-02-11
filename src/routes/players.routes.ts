@@ -3,7 +3,11 @@ import { getCustomRepository } from 'typeorm';
 import PlayersRepository from '../repositories/PlayersRepository';
 import CreatePlayerService from '../services/CreatePlayerService';
 
+// import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+
 const playersRouter = Router();
+
+// playersRouter.use(ensureAuthenticated);
 
 playersRouter.get('/', async (request, response) => {
   const playersRepository = getCustomRepository(PlayersRepository);
